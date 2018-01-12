@@ -1,24 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eka-js-DL9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PartyLET.ttf">
+            <string>PartyLetPlain</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StartVC" customModule="Sweet_Dreams" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundMenu" translatesAutoresizingMaskIntoConstraints="NO" id="hrq-t4-tnT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEp-Bx-fzX">
+                                <rect key="frame" x="10.5" y="274" width="355" height="119"/>
+                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="91"/>
+                                <state key="normal" title="Sweet Dreams">
+                                    <color key="titleColor" red="1" green="0.87906915168748156" blue="0.64129857794479261" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eJk-iZ-bJJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fEp-Bx-fzX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7NO-sP-e53"/>
+                            <constraint firstItem="fEp-Bx-fzX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="O2i-fI-xwB"/>
+                            <constraint firstItem="hrq-t4-tnT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SQX-IY-7WJ"/>
+                            <constraint firstItem="hrq-t4-tnT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TlD-AJ-ei8"/>
+                            <constraint firstItem="hrq-t4-tnT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jBS-Su-Vp6"/>
+                            <constraint firstItem="hrq-t4-tnT" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vwS-Wh-6tk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Welcome" id="sMz-eE-Pb8"/>
+                    <connections>
+                        <outlet property="startButton" destination="fEp-Bx-fzX" id="HNR-iL-2i3"/>
+                        <segue destination="ceW-el-b8M" kind="show" identifier="start" id="rHu-XF-2cX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-76" y="-63.418290854572717"/>
+        </scene>
+        <!--AboutVC-->
+        <scene sceneID="SvB-3x-urg">
+            <objects>
+                <viewController id="MO7-gL-4qZ" customClass="AboutVC" customModule="Sweet_Dreams" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pLx-Oa-D18">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundMenu" translatesAutoresizingMaskIntoConstraints="NO" id="NqY-nc-F1c">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NqY-nc-F1c" firstAttribute="leading" secondItem="n26-zF-7oo" secondAttribute="leading" id="Pvo-yv-kJN"/>
+                            <constraint firstItem="NqY-nc-F1c" firstAttribute="trailing" secondItem="n26-zF-7oo" secondAttribute="trailing" id="SkH-HV-ZuV"/>
+                            <constraint firstItem="NqY-nc-F1c" firstAttribute="top" secondItem="pLx-Oa-D18" secondAttribute="top" id="hfZ-gY-tzL"/>
+                            <constraint firstItem="NqY-nc-F1c" firstAttribute="bottom" secondItem="n26-zF-7oo" secondAttribute="bottom" id="x2N-W2-N9x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n26-zF-7oo"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gqA-5m-GNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18.399999999999999" y="741.67916041979015"/>
+        </scene>
+        <!--MainVC-->
+        <scene sceneID="3bF-ho-VjX">
+            <objects>
+                <viewController id="ceW-el-b8M" customClass="MainVC" customModule="Sweet_Dreams" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7zd-EK-AsX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9I-fC-F1x">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="385"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbS-46-QMO">
+                                <rect key="frame" x="0.0" y="385" width="375" height="282"/>
+                                <connections>
+                                    <segue destination="lKo-vD-egT" kind="embed" id="lrV-yz-dG9"/>
+                                </connections>
+                            </containerView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VmF-jB-259">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Select your sound" id="9YI-2W-6zh"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vbS-46-QMO" firstAttribute="top" secondItem="7zd-EK-AsX" secondAttribute="top" constant="385" id="0Xx-Xn-TdL"/>
+                            <constraint firstItem="vbS-46-QMO" firstAttribute="top" secondItem="d9I-fC-F1x" secondAttribute="bottom" id="GLo-8f-xXK"/>
+                            <constraint firstItem="d9I-fC-F1x" firstAttribute="top" secondItem="7zd-EK-AsX" secondAttribute="top" id="QNE-B4-JpC"/>
+                            <constraint firstItem="vbS-46-QMO" firstAttribute="bottom" secondItem="HXq-6e-cLP" secondAttribute="bottom" id="bpc-ux-xNU"/>
+                            <constraint firstItem="vbS-46-QMO" firstAttribute="leading" secondItem="HXq-6e-cLP" secondAttribute="leading" id="c6q-79-c91"/>
+                            <constraint firstItem="d9I-fC-F1x" firstAttribute="leading" secondItem="HXq-6e-cLP" secondAttribute="leading" id="kN6-ZC-Q3t"/>
+                            <constraint firstItem="d9I-fC-F1x" firstAttribute="trailing" secondItem="HXq-6e-cLP" secondAttribute="trailing" id="rMC-3H-bWV"/>
+                            <constraint firstItem="vbS-46-QMO" firstAttribute="trailing" secondItem="HXq-6e-cLP" secondAttribute="trailing" id="uik-BI-kwb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HXq-6e-cLP"/>
+                    </view>
+                    <connections>
+                        <segue destination="MO7-gL-4qZ" kind="show" identifier="about" id="eJG-3i-X80"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNa-94-c5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756" y="-62.518740629685162"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KJo-3n-vo8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eka-js-DL9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Bh-iY-pXp">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ncU-rD-VUE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kv3-AD-mfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1014" y="-63"/>
+        </scene>
+        <!--Select SoundVC-->
+        <scene sceneID="wa9-HY-wnt">
+            <objects>
+                <viewController id="lKo-vD-egT" customClass="SelectSoundVC" customModule="Sweet_Dreams" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gFo-cW-ck4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byJ-SJ-CI0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlX-dp-1kP">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundMenu" translatesAutoresizingMaskIntoConstraints="NO" id="Aef-6A-iVW">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="500" id="1Sf-EE-WtS"/>
+                                            <constraint firstItem="Aef-6A-iVW" firstAttribute="leading" secondItem="AlX-dp-1kP" secondAttribute="leading" id="4xK-p7-ib3"/>
+                                            <constraint firstAttribute="trailing" secondItem="Aef-6A-iVW" secondAttribute="trailing" id="GeC-hZ-L79"/>
+                                            <constraint firstAttribute="bottom" secondItem="Aef-6A-iVW" secondAttribute="bottom" id="VwC-DM-9dl"/>
+                                            <constraint firstItem="Aef-6A-iVW" firstAttribute="top" secondItem="AlX-dp-1kP" secondAttribute="top" id="lyC-og-sfH"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="AlX-dp-1kP" firstAttribute="top" secondItem="byJ-SJ-CI0" secondAttribute="top" id="cB3-Ck-1t2"/>
+                                    <constraint firstAttribute="trailing" secondItem="AlX-dp-1kP" secondAttribute="trailing" id="hOb-kS-Iba"/>
+                                    <constraint firstItem="AlX-dp-1kP" firstAttribute="leading" secondItem="byJ-SJ-CI0" secondAttribute="leading" id="hZd-O7-ezw"/>
+                                    <constraint firstAttribute="bottom" secondItem="AlX-dp-1kP" secondAttribute="bottom" id="iw0-0n-5qb"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="byJ-SJ-CI0" firstAttribute="leading" secondItem="gFo-cW-ck4" secondAttribute="leading" id="DVk-aQ-iax"/>
+                            <constraint firstAttribute="trailing" secondItem="byJ-SJ-CI0" secondAttribute="trailing" id="SUP-nh-5hc"/>
+                            <constraint firstAttribute="bottom" secondItem="byJ-SJ-CI0" secondAttribute="bottom" id="Sed-cK-J4z"/>
+                            <constraint firstItem="byJ-SJ-CI0" firstAttribute="top" secondItem="gFo-cW-ck4" secondAttribute="top" id="ijg-GQ-c9A"/>
+                            <constraint firstItem="AlX-dp-1kP" firstAttribute="width" secondItem="gFo-cW-ck4" secondAttribute="width" id="sK2-Ma-WMD"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="375" height="500"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLa-ex-AkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1429.5999999999999" y="603.59820089955031"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backgroundMenu" width="166" height="296"/>
+    </resources>
 </document>
