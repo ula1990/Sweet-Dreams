@@ -15,8 +15,8 @@ class MainVC: UIViewController {
         
         //CONFIGURE NAVIGATION CONTROLLER
         
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+       // navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+     //  navigationController?.navigationBar.shadowImage = UIImage()
 
         // Do any additional setup after loading the view.
     }
