@@ -112,9 +112,12 @@
                                 <color key="textColor" white="1" alpha="0.7032855308219178" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gwo-iT-XaB">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gwo-iT-XaB">
                                 <rect key="frame" x="34" y="362" width="307" height="31"/>
                                 <color key="tintColor" red="0.2167307138" green="0.25045031309999999" blue="0.53722065689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeAudioTime:" destination="ceW-el-b8M" eventType="valueChanged" id="lSO-hO-qHP"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMN-yv-Mpw" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
                                 <rect key="frame" x="114" y="318" width="35" height="35"/>
@@ -166,6 +169,15 @@
                                     <action selector="replayButton:" destination="ceW-el-b8M" eventType="touchUpInside" id="4aY-E0-ugs"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFo-qe-DPy">
+                                <rect key="frame" x="27.5" y="318" width="63.5" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="wNy-ff-UKg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="20"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.15676254034042358" green="0.21549254655838013" blue="0.48577946424484253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -178,6 +190,7 @@
                             <constraint firstItem="HXq-6e-cLP" firstAttribute="trailing" secondItem="Yez-tr-SSP" secondAttribute="trailing" constant="170" id="HA1-n5-4VT"/>
                             <constraint firstItem="Yez-tr-SSP" firstAttribute="top" secondItem="sMN-yv-Mpw" secondAttribute="top" id="LDF-lf-9AS"/>
                             <constraint firstItem="Yez-tr-SSP" firstAttribute="leading" secondItem="sMN-yv-Mpw" secondAttribute="trailing" constant="21" id="Lfx-0a-P9c"/>
+                            <constraint firstItem="sMN-yv-Mpw" firstAttribute="leading" secondItem="FFo-qe-DPy" secondAttribute="trailing" constant="23" id="M7O-lu-hFP"/>
                             <constraint firstItem="Gwo-iT-XaB" firstAttribute="centerX" secondItem="7zd-EK-AsX" secondAttribute="centerX" id="W9I-SP-l5D"/>
                             <constraint firstItem="Gwo-iT-XaB" firstAttribute="top" secondItem="vbS-46-QMO" secondAttribute="bottom" constant="52" id="XfE-9h-zwe"/>
                             <constraint firstItem="QnW-nK-lrl" firstAttribute="top" secondItem="Gwo-iT-XaB" secondAttribute="bottom" constant="-74" id="aWh-H3-YUd"/>
@@ -185,6 +198,7 @@
                             <constraint firstItem="vbS-46-QMO" firstAttribute="leading" secondItem="HXq-6e-cLP" secondAttribute="leading" id="c6q-79-c91"/>
                             <constraint firstItem="sMN-yv-Mpw" firstAttribute="top" secondItem="Gwo-iT-XaB" secondAttribute="bottom" constant="-74" id="dh8-Jv-urb"/>
                             <constraint firstItem="Yez-tr-SSP" firstAttribute="bottom" secondItem="sMN-yv-Mpw" secondAttribute="bottom" id="ig3-9J-OO8"/>
+                            <constraint firstItem="FFo-qe-DPy" firstAttribute="top" secondItem="vbS-46-QMO" secondAttribute="bottom" constant="8" id="kVE-B8-Lcx"/>
                             <constraint firstItem="sMN-yv-Mpw" firstAttribute="leading" secondItem="Gwo-iT-XaB" secondAttribute="leading" constant="78" id="neV-FQ-Pny"/>
                             <constraint firstItem="HXq-6e-cLP" firstAttribute="trailing" secondItem="yuT-cZ-4zD" secondAttribute="trailing" id="p4h-If-PjZ"/>
                             <constraint firstItem="yuT-cZ-4zD" firstAttribute="leading" secondItem="HXq-6e-cLP" secondAttribute="leading" id="pTT-af-pC0"/>
@@ -203,6 +217,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundImage" destination="KQa-ly-63K" id="8BB-NQ-49z"/>
+                        <outlet property="currenTimeOfAudio" destination="FFo-qe-DPy" id="sQi-L3-p3f"/>
                         <outlet property="historyOfSoundLbl" destination="yuT-cZ-4zD" id="KRo-cu-71Q"/>
                         <outlet property="slider" destination="Gwo-iT-XaB" id="sb5-qc-Gd6"/>
                         <segue destination="MO7-gL-4qZ" kind="show" identifier="about" id="eJG-3i-X80"/>
