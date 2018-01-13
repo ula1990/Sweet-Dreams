@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,21 +26,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundMenu" translatesAutoresizingMaskIntoConstraints="NO" id="CCu-dz-u7G">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEp-Bx-fzX">
-                                <rect key="frame" x="10.5" y="274" width="355" height="119"/>
+                                <rect key="frame" x="10" y="233" width="355" height="119"/>
                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="91"/>
                                 <state key="normal" title="Sweet Dreams">
-                                    <color key="titleColor" red="1" green="0.87906915168748156" blue="0.64129857794479261" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eJk-iZ-bJJ"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="0.8455425941780822" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fEp-Bx-fzX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7NO-sP-e53"/>
-                            <constraint firstItem="fEp-Bx-fzX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="O2i-fI-xwB"/>
+                            <constraint firstItem="CCu-dz-u7G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HBs-WL-DsN"/>
+                            <constraint firstItem="fEp-Bx-fzX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-41" id="O2i-fI-xwB"/>
+                            <constraint firstItem="CCu-dz-u7G" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Yp9-Qe-7Bt"/>
+                            <constraint firstItem="CCu-dz-u7G" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="j6n-iL-j7S"/>
+                            <constraint firstItem="CCu-dz-u7G" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wwW-Bm-DSh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -62,7 +67,17 @@
                     <view key="view" contentMode="scaleToFill" id="pLx-Oa-D18">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="0.8455425942" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundMenu" translatesAutoresizingMaskIntoConstraints="NO" id="VfU-vD-T62">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="VfU-vD-T62" firstAttribute="leading" secondItem="n26-zF-7oo" secondAttribute="leading" id="Auy-r3-zyO"/>
+                            <constraint firstItem="VfU-vD-T62" firstAttribute="top" secondItem="pLx-Oa-D18" secondAttribute="top" id="KjR-yA-zLg"/>
+                            <constraint firstItem="VfU-vD-T62" firstAttribute="trailing" secondItem="n26-zF-7oo" secondAttribute="trailing" id="OHC-6G-fUj"/>
+                            <constraint firstItem="VfU-vD-T62" firstAttribute="bottom" secondItem="n26-zF-7oo" secondAttribute="bottom" id="ucd-zC-aMK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="n26-zF-7oo"/>
                     </view>
                 </viewController>
@@ -70,44 +85,64 @@
             </objects>
             <point key="canvasLocation" x="-18.399999999999999" y="741.67916041979015"/>
         </scene>
-        <!--Select your sound-->
+        <!--MainVC-->
         <scene sceneID="3bF-ho-VjX">
             <objects>
-                <viewController title="Select your sound" id="ceW-el-b8M" customClass="MainVC" customModule="Sweet_Dreams" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ceW-el-b8M" customClass="MainVC" customModule="Sweet_Dreams" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7zd-EK-AsX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="riverImage" translatesAutoresizingMaskIntoConstraints="NO" id="d9I-fC-F1x">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="385"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundMenu" translatesAutoresizingMaskIntoConstraints="NO" id="KQa-ly-63K">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbS-46-QMO">
-                                <rect key="frame" x="0.0" y="385" width="375" height="282"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="290"/>
                                 <connections>
-                                    <segue destination="lKo-vD-egT" kind="embed" id="lrV-yz-dG9"/>
+                                    <segue destination="lKo-vD-egT" kind="embed" identifier="SelectSoundVC" id="lrV-yz-dG9"/>
                                 </connections>
                             </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here will be the small story of selected sound" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuT-cZ-4zD">
+                                <rect key="frame" x="0.0" y="554" width="375" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="P43-51-jCg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="0.7032855308219178" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.15676254034042358" green="0.21549254655838013" blue="0.48577946424484253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vbS-46-QMO" firstAttribute="top" secondItem="7zd-EK-AsX" secondAttribute="top" constant="385" id="0Xx-Xn-TdL"/>
-                            <constraint firstItem="vbS-46-QMO" firstAttribute="top" secondItem="d9I-fC-F1x" secondAttribute="bottom" id="GLo-8f-xXK"/>
-                            <constraint firstItem="d9I-fC-F1x" firstAttribute="top" secondItem="7zd-EK-AsX" secondAttribute="top" id="QNE-B4-JpC"/>
-                            <constraint firstItem="vbS-46-QMO" firstAttribute="bottom" secondItem="HXq-6e-cLP" secondAttribute="bottom" id="bpc-ux-xNU"/>
+                            <constraint firstItem="vbS-46-QMO" firstAttribute="top" secondItem="7zd-EK-AsX" secondAttribute="top" constant="64" id="0Xx-Xn-TdL"/>
+                            <constraint firstItem="KQa-ly-63K" firstAttribute="top" secondItem="7zd-EK-AsX" secondAttribute="top" id="9FK-HY-vcV"/>
+                            <constraint firstItem="KQa-ly-63K" firstAttribute="bottom" secondItem="HXq-6e-cLP" secondAttribute="bottom" id="BbH-l5-zCY"/>
+                            <constraint firstItem="HXq-6e-cLP" firstAttribute="bottom" secondItem="yuT-cZ-4zD" secondAttribute="bottom" constant="20" id="G2R-Zs-gtM"/>
+                            <constraint firstItem="KQa-ly-63K" firstAttribute="trailing" secondItem="HXq-6e-cLP" secondAttribute="trailing" id="GDj-Jy-DMM"/>
+                            <constraint firstItem="vbS-46-QMO" firstAttribute="bottom" secondItem="HXq-6e-cLP" secondAttribute="bottom" constant="-313" id="bpc-ux-xNU"/>
                             <constraint firstItem="vbS-46-QMO" firstAttribute="leading" secondItem="HXq-6e-cLP" secondAttribute="leading" id="c6q-79-c91"/>
-                            <constraint firstItem="d9I-fC-F1x" firstAttribute="leading" secondItem="HXq-6e-cLP" secondAttribute="leading" id="kN6-ZC-Q3t"/>
-                            <constraint firstItem="d9I-fC-F1x" firstAttribute="trailing" secondItem="HXq-6e-cLP" secondAttribute="trailing" id="rMC-3H-bWV"/>
+                            <constraint firstItem="HXq-6e-cLP" firstAttribute="trailing" secondItem="yuT-cZ-4zD" secondAttribute="trailing" id="p4h-If-PjZ"/>
+                            <constraint firstItem="yuT-cZ-4zD" firstAttribute="leading" secondItem="HXq-6e-cLP" secondAttribute="leading" id="pTT-af-pC0"/>
+                            <constraint firstItem="KQa-ly-63K" firstAttribute="leading" secondItem="HXq-6e-cLP" secondAttribute="leading" id="qy0-JE-h3t"/>
                             <constraint firstItem="vbS-46-QMO" firstAttribute="trailing" secondItem="HXq-6e-cLP" secondAttribute="trailing" id="uik-BI-kwb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HXq-6e-cLP"/>
                     </view>
+                    <navigationItem key="navigationItem" id="GB0-Wq-Hib">
+                        <barButtonItem key="rightBarButtonItem" title="About" id="Mz9-0Z-DTf">
+                            <connections>
+                                <action selector="aboutButton:" destination="ceW-el-b8M" id="Hnx-N7-wmZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="historyOfSoundLbl" destination="yuT-cZ-4zD" id="KRo-cu-71Q"/>
                         <segue destination="MO7-gL-4qZ" kind="show" identifier="about" id="eJG-3i-X80"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNa-94-c5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="-62.518740629685162"/>
+            <point key="canvasLocation" x="1232.8" y="-22.03898050974513"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KJo-3n-vo8">
@@ -117,10 +152,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Bh-iY-pXp">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="0.8455425942" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -146,80 +180,115 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlX-dp-1kP">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPS-DM-oEv">
-                                                <rect key="frame" x="142" y="28" width="90" height="90"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPS-DM-oEv" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
+                                                <rect key="frame" x="98" y="10" width="60" height="60"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.11304045376712329" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="90" id="acZ-8b-Hb3"/>
-                                                    <constraint firstAttribute="height" constant="90" id="mN8-de-cnz"/>
+                                                    <constraint firstAttribute="height" constant="60" id="2b1-TE-2uU"/>
+                                                    <constraint firstAttribute="width" constant="60" id="i7H-Vh-9Ab"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="river"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="riverSoundBut:" destination="lKo-vD-egT" eventType="touchUpInside" id="xj6-VS-Qsm"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdo-t3-Qb0">
-                                                <rect key="frame" x="142" y="152" width="90" height="90"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdo-t3-Qb0" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
+                                                <rect key="frame" x="217" y="10" width="60" height="60"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.11304045376712329" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="8nh-qa-4yR"/>
-                                                    <constraint firstAttribute="height" constant="90" id="Ea7-BD-yRz"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="O1X-i1-9SY"/>
-                                                    <constraint firstAttribute="width" constant="90" id="jxc-ae-VGE"/>
+                                                    <constraint firstAttribute="width" constant="60" id="1Y4-df-LMA"/>
+                                                    <constraint firstAttribute="height" constant="60" id="A2H-Ea-PwM"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="forest"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="forestSoundBut:" destination="lKo-vD-egT" eventType="touchUpInside" id="4zK-Qr-PhH"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6w-5R-sd3">
-                                                <rect key="frame" x="8" y="28" width="90" height="90"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6w-5R-sd3" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="10" width="60" height="60"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.11304045376712329" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="1mJ-Rc-Raq"/>
-                                                    <constraint firstAttribute="height" constant="90" id="PkV-Ym-iML"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Yrc-2B-0G2"/>
-                                                    <constraint firstAttribute="width" constant="90" id="jvv-2E-PaY"/>
+                                                    <constraint firstAttribute="height" constant="60" id="QEa-Jj-6Ee"/>
+                                                    <constraint firstAttribute="width" constant="60" id="cr6-dT-5SI"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="winter"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="winterSoundBut:" destination="lKo-vD-egT" eventType="touchUpInside" id="bXZ-0k-kIc"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rG-71-69n">
-                                                <rect key="frame" x="277" y="28" width="90" height="90"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rG-71-69n" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
+                                                <rect key="frame" x="307" y="10" width="60" height="60"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.11304045376712329" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="LwQ-dk-tZm"/>
-                                                    <constraint firstAttribute="width" constant="90" id="Qte-7e-oLh"/>
-                                                    <constraint firstAttribute="height" constant="90" id="a0v-P8-JSQ"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="rRt-Ng-0Az"/>
+                                                    <constraint firstAttribute="width" constant="60" id="0qQ-Xl-hRr"/>
+                                                    <constraint firstAttribute="height" constant="60" id="Qfr-ki-aQ0"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="sea"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="seaSoundBut:" destination="lKo-vD-egT" eventType="touchUpInside" id="W0Q-VA-owF"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Others sounds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tal-vb-f7P">
-                                                <rect key="frame" x="114" y="268" width="147.5" height="49"/>
+                                                <rect key="frame" x="114" y="104" width="148" height="49"/>
                                                 <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="41"/>
-                                                <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUA-Ul-hnx">
-                                                <rect key="frame" x="142" y="325" width="90" height="90"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUA-Ul-hnx" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
+                                                <rect key="frame" x="158" y="161" width="60" height="60"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.11304045376712329" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="90" id="4yQ-uW-FlA"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="HIP-wR-LOg"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="iam-Iy-Io9"/>
-                                                    <constraint firstAttribute="width" constant="90" id="jZd-FU-0gU"/>
+                                                    <constraint firstAttribute="height" constant="60" id="1Kd-My-XbM"/>
+                                                    <constraint firstAttribute="width" constant="60" id="KjX-Ff-Odb"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="train"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="trainSoundBut:" destination="lKo-vD-egT" eventType="touchUpInside" id="hbZ-11-D4j"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="0.8455425942" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="500" id="1Sf-EE-WtS"/>
-                                            <constraint firstItem="h6w-5R-sd3" firstAttribute="leading" secondItem="AlX-dp-1kP" secondAttribute="leading" constant="8" id="6Se-Ua-4oz"/>
-                                            <constraint firstItem="h6w-5R-sd3" firstAttribute="top" secondItem="AlX-dp-1kP" secondAttribute="top" constant="28" id="X9U-ym-8KE"/>
-                                            <constraint firstItem="Tal-vb-f7P" firstAttribute="top" secondItem="fdo-t3-Qb0" secondAttribute="bottom" constant="26" id="asa-J3-XRz"/>
-                                            <constraint firstItem="GPS-DM-oEv" firstAttribute="centerX" secondItem="AlX-dp-1kP" secondAttribute="centerX" id="b3E-wq-qYF"/>
+                                            <constraint firstItem="GPS-DM-oEv" firstAttribute="leading" secondItem="h6w-5R-sd3" secondAttribute="trailing" constant="30" id="91n-dy-q4w"/>
+                                            <constraint firstItem="GPS-DM-oEv" firstAttribute="top" secondItem="AlX-dp-1kP" secondAttribute="top" constant="10" id="Dhj-P7-Fv1"/>
+                                            <constraint firstItem="6rG-71-69n" firstAttribute="leading" secondItem="fdo-t3-Qb0" secondAttribute="trailing" constant="30" id="LhD-L2-Equ"/>
+                                            <constraint firstAttribute="trailing" secondItem="6rG-71-69n" secondAttribute="trailing" constant="8" id="PBS-9T-F9a"/>
+                                            <constraint firstItem="UUA-Ul-hnx" firstAttribute="centerX" secondItem="AlX-dp-1kP" secondAttribute="centerX" id="X4n-WN-PSU"/>
+                                            <constraint firstItem="6rG-71-69n" firstAttribute="top" secondItem="AlX-dp-1kP" secondAttribute="top" constant="10" id="avg-mI-yEy"/>
                                             <constraint firstItem="Tal-vb-f7P" firstAttribute="centerX" secondItem="AlX-dp-1kP" secondAttribute="centerX" id="etL-fW-wmP"/>
-                                            <constraint firstItem="fdo-t3-Qb0" firstAttribute="centerX" secondItem="AlX-dp-1kP" secondAttribute="centerX" id="g67-8O-cKe"/>
-                                            <constraint firstItem="fdo-t3-Qb0" firstAttribute="top" secondItem="GPS-DM-oEv" secondAttribute="bottom" constant="34" id="gOK-ZT-pGV"/>
-                                            <constraint firstItem="GPS-DM-oEv" firstAttribute="top" secondItem="AlX-dp-1kP" secondAttribute="topMargin" id="j8r-Xp-mIc"/>
-                                            <constraint firstItem="UUA-Ul-hnx" firstAttribute="top" secondItem="Tal-vb-f7P" secondAttribute="bottom" constant="8" id="n53-t0-zpz"/>
-                                            <constraint firstItem="6rG-71-69n" firstAttribute="top" secondItem="AlX-dp-1kP" secondAttribute="top" constant="28" id="wCP-iL-Mfl"/>
-                                            <constraint firstAttribute="trailing" secondItem="6rG-71-69n" secondAttribute="trailing" constant="8" id="xIw-Qd-olG"/>
-                                            <constraint firstItem="UUA-Ul-hnx" firstAttribute="centerX" secondItem="AlX-dp-1kP" secondAttribute="centerX" id="zWF-rA-TJZ"/>
+                                            <constraint firstItem="Tal-vb-f7P" firstAttribute="top" secondItem="GPS-DM-oEv" secondAttribute="bottom" constant="34" id="jCp-S6-A1b"/>
+                                            <constraint firstItem="fdo-t3-Qb0" firstAttribute="top" secondItem="AlX-dp-1kP" secondAttribute="top" constant="10" id="jGl-wh-10h"/>
+                                            <constraint firstItem="h6w-5R-sd3" firstAttribute="top" secondItem="AlX-dp-1kP" secondAttribute="top" constant="10" id="knF-kr-HWF"/>
+                                            <constraint firstItem="h6w-5R-sd3" firstAttribute="leading" secondItem="AlX-dp-1kP" secondAttribute="leading" constant="8" id="l4L-ou-kXz"/>
+                                            <constraint firstItem="UUA-Ul-hnx" firstAttribute="top" secondItem="Tal-vb-f7P" secondAttribute="bottom" constant="8" id="ozZ-S2-VyU"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="0.8455425942" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="AlX-dp-1kP" firstAttribute="top" secondItem="byJ-SJ-CI0" secondAttribute="top" id="cB3-Ck-1t2"/>
                                     <constraint firstAttribute="trailing" secondItem="AlX-dp-1kP" secondAttribute="trailing" id="hOb-kS-Iba"/>
@@ -228,7 +297,6 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="0.8455425942" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="byJ-SJ-CI0" firstAttribute="leading" secondItem="gFo-cW-ck4" secondAttribute="leading" id="DVk-aQ-iax"/>
                             <constraint firstAttribute="trailing" secondItem="byJ-SJ-CI0" secondAttribute="trailing" id="SUP-nh-5hc"/>
@@ -242,15 +310,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLa-ex-AkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429.5999999999999" y="603.59820089955031"/>
+            <point key="canvasLocation" x="1470" y="772"/>
         </scene>
     </scenes>
     <resources>
-        <image name="forest" width="32" height="32"/>
-        <image name="river" width="32" height="32"/>
-        <image name="riverImage" width="360" height="640"/>
-        <image name="sea" width="32" height="32"/>
-        <image name="train" width="32" height="32"/>
-        <image name="winter" width="32" height="32"/>
+        <image name="backgroundMenu" width="219" height="389"/>
+        <image name="forest" width="96" height="96"/>
+        <image name="river" width="96" height="96"/>
+        <image name="sea" width="96" height="96"/>
+        <image name="train" width="96" height="96"/>
+        <image name="winter" width="96" height="96"/>
     </resources>
 </document>

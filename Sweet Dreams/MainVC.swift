@@ -8,25 +8,52 @@
 
 import UIKit
 
+
+
 class MainVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //CONFIGURE NAVIGATION CONTROLLER
-        
-       // navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-     //  navigationController?.navigationBar.shadowImage = UIImage()
+    var recivedTrackNumber: Int!
+    @IBOutlet weak var historyOfSoundLbl: UILabel!
+    
 
-        // Do any additional setup after loading the view.
+    @IBAction func aboutButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "about", sender: navigationController)
+        
+
+    }
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()        
+        
+      
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? SelectSoundVC, segue.identifier == "SelectSoundVC" {
+            viewController.selectionDelegate = self
+        }
+    }
+
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-
 
 }
+
+extension MainVC: SelectedTrackDelegate {
+    func didSelectTrackNumber(_ trackNumber: Int) {
+        historyOfSoundLbl.text = String(trackNumber)
+    }
+    
+    
+}
+
+

@@ -8,7 +8,46 @@
 
 import UIKit
 
+protocol SelectedTrackDelegate {
+    func didSelectTrackNumber(_ trackNumber: Int)
+}
+
 class SelectSoundVC: UIViewController {
+    
+    
+ 
+    var trackNumber: Int!
+     var selectionDelegate: SelectedTrackDelegate?
+  
+
+    @IBAction func winterSoundBut(_ sender: UIButton) {
+        trackNumber = 1
+        selectionDelegate?.didSelectTrackNumber(trackNumber)
+
+    }
+    
+    @IBAction func riverSoundBut(_ sender: UIButton) {
+        trackNumber = 2
+        selectionDelegate?.didSelectTrackNumber(trackNumber)
+    }
+    
+    @IBAction func forestSoundBut(_ sender: UIButton) {
+        trackNumber = 3
+        selectionDelegate?.didSelectTrackNumber(trackNumber)
+        
+    }
+    
+    @IBAction func seaSoundBut(_ sender: UIButton) {
+        trackNumber = 4
+        selectionDelegate?.didSelectTrackNumber(trackNumber)
+        
+    }
+    
+    @IBAction func trainSoundBut(_ sender: Any) {
+        trackNumber = 5
+        selectionDelegate?.didSelectTrackNumber(trackNumber)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +59,9 @@ class SelectSoundVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
+
     
 
     /*
