@@ -9,44 +9,55 @@
 import UIKit
 
 protocol SelectedTrackDelegate {
-    func didSelectTrackNumber(_ trackNumber: Int)
+    func didSelectTrackNumber(_ trackNumber: Int , historyOfSound: String , image: UIImage)
 }
 
 class SelectSoundVC: UIViewController {
     
     
+    var historyArray = ["Winter sound","River sound","Forest sound","Sea sound ","Train sound","Rain sound"]
+    
  
     var trackNumber: Int!
+    
      var selectionDelegate: SelectedTrackDelegate?
   
 
     @IBAction func winterSoundBut(_ sender: UIButton) {
         trackNumber = 1
-        selectionDelegate?.didSelectTrackNumber(trackNumber)
+        
+        selectionDelegate?.didSelectTrackNumber(trackNumber, historyOfSound: historyArray[0] , image: UIImage(named: "background1")!)
 
     }
     
     @IBAction func riverSoundBut(_ sender: UIButton) {
         trackNumber = 2
-        selectionDelegate?.didSelectTrackNumber(trackNumber)
+        selectionDelegate?.didSelectTrackNumber(trackNumber, historyOfSound: historyArray[1] , image: UIImage(named: "background2")!)
     }
     
     @IBAction func forestSoundBut(_ sender: UIButton) {
         trackNumber = 3
-        selectionDelegate?.didSelectTrackNumber(trackNumber)
+        selectionDelegate?.didSelectTrackNumber(trackNumber, historyOfSound: historyArray[2] , image: UIImage(named: "background3")!)
         
     }
     
     @IBAction func seaSoundBut(_ sender: UIButton) {
         trackNumber = 4
-        selectionDelegate?.didSelectTrackNumber(trackNumber)
+        selectionDelegate?.didSelectTrackNumber(trackNumber, historyOfSound: historyArray[3] , image: UIImage(named: "background4")!)
         
     }
     
-    @IBAction func trainSoundBut(_ sender: Any) {
+    @IBAction func trainSoundBut(_ sender: UIButton) {
         trackNumber = 5
-        selectionDelegate?.didSelectTrackNumber(trackNumber)
+        selectionDelegate?.didSelectTrackNumber(trackNumber, historyOfSound: historyArray[4] , image: UIImage(named: "background5")!)
     }
+    
+    @IBAction func stormSoundBut(_ sender: UIButton) {
+        trackNumber = 6
+        selectionDelegate?.didSelectTrackNumber(trackNumber, historyOfSound: historyArray[5] , image: UIImage(named: "background6")!)
+        
+    }
+    
     
 
     override func viewDidLoad() {

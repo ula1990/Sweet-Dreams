@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -97,7 +98,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbS-46-QMO">
-                                <rect key="frame" x="0.0" y="64" width="375" height="290"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="246"/>
                                 <connections>
                                     <segue destination="lKo-vD-egT" kind="embed" identifier="SelectSoundVC" id="lrV-yz-dG9"/>
                                 </connections>
@@ -111,20 +112,85 @@
                                 <color key="textColor" white="1" alpha="0.7032855308219178" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gwo-iT-XaB">
+                                <rect key="frame" x="34" y="362" width="307" height="31"/>
+                                <color key="tintColor" red="0.2167307138" green="0.25045031309999999" blue="0.53722065689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMN-yv-Mpw" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
+                                <rect key="frame" x="114" y="318" width="35" height="35"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="GcU-61-nez"/>
+                                    <constraint firstAttribute="height" constant="35" id="HwI-dp-6fC"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="play"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playButton:" destination="ceW-el-b8M" eventType="touchUpInside" id="Hto-n5-qkn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yez-tr-SSP" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
+                                <rect key="frame" x="170" y="318" width="35" height="35"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="pause"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pauseButton:" destination="ceW-el-b8M" eventType="touchUpInside" id="sqw-jY-evb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnW-nK-lrl" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
+                                <rect key="frame" x="226" y="318" width="35" height="35"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="TBd-ua-Kci"/>
+                                    <constraint firstAttribute="width" constant="35" id="bAQ-qg-maa"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="repeat"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="replayButton:" destination="ceW-el-b8M" eventType="touchUpInside" id="4aY-E0-ugs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.15676254034042358" green="0.21549254655838013" blue="0.48577946424484253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vbS-46-QMO" firstAttribute="top" secondItem="7zd-EK-AsX" secondAttribute="top" constant="64" id="0Xx-Xn-TdL"/>
                             <constraint firstItem="KQa-ly-63K" firstAttribute="top" secondItem="7zd-EK-AsX" secondAttribute="top" id="9FK-HY-vcV"/>
                             <constraint firstItem="KQa-ly-63K" firstAttribute="bottom" secondItem="HXq-6e-cLP" secondAttribute="bottom" id="BbH-l5-zCY"/>
+                            <constraint firstItem="Gwo-iT-XaB" firstAttribute="leading" secondItem="HXq-6e-cLP" secondAttribute="leading" constant="36" id="Dzk-bT-N8L"/>
                             <constraint firstItem="HXq-6e-cLP" firstAttribute="bottom" secondItem="yuT-cZ-4zD" secondAttribute="bottom" constant="20" id="G2R-Zs-gtM"/>
                             <constraint firstItem="KQa-ly-63K" firstAttribute="trailing" secondItem="HXq-6e-cLP" secondAttribute="trailing" id="GDj-Jy-DMM"/>
-                            <constraint firstItem="vbS-46-QMO" firstAttribute="bottom" secondItem="HXq-6e-cLP" secondAttribute="bottom" constant="-313" id="bpc-ux-xNU"/>
+                            <constraint firstItem="HXq-6e-cLP" firstAttribute="trailing" secondItem="Yez-tr-SSP" secondAttribute="trailing" constant="170" id="HA1-n5-4VT"/>
+                            <constraint firstItem="Yez-tr-SSP" firstAttribute="top" secondItem="sMN-yv-Mpw" secondAttribute="top" id="LDF-lf-9AS"/>
+                            <constraint firstItem="Yez-tr-SSP" firstAttribute="leading" secondItem="sMN-yv-Mpw" secondAttribute="trailing" constant="21" id="Lfx-0a-P9c"/>
+                            <constraint firstItem="Gwo-iT-XaB" firstAttribute="centerX" secondItem="7zd-EK-AsX" secondAttribute="centerX" id="W9I-SP-l5D"/>
+                            <constraint firstItem="Gwo-iT-XaB" firstAttribute="top" secondItem="vbS-46-QMO" secondAttribute="bottom" constant="52" id="XfE-9h-zwe"/>
+                            <constraint firstItem="QnW-nK-lrl" firstAttribute="top" secondItem="Gwo-iT-XaB" secondAttribute="bottom" constant="-74" id="aWh-H3-YUd"/>
+                            <constraint firstItem="vbS-46-QMO" firstAttribute="bottom" secondItem="HXq-6e-cLP" secondAttribute="bottom" constant="-357" id="bpc-ux-xNU"/>
                             <constraint firstItem="vbS-46-QMO" firstAttribute="leading" secondItem="HXq-6e-cLP" secondAttribute="leading" id="c6q-79-c91"/>
+                            <constraint firstItem="sMN-yv-Mpw" firstAttribute="top" secondItem="Gwo-iT-XaB" secondAttribute="bottom" constant="-74" id="dh8-Jv-urb"/>
+                            <constraint firstItem="Yez-tr-SSP" firstAttribute="bottom" secondItem="sMN-yv-Mpw" secondAttribute="bottom" id="ig3-9J-OO8"/>
+                            <constraint firstItem="sMN-yv-Mpw" firstAttribute="leading" secondItem="Gwo-iT-XaB" secondAttribute="leading" constant="78" id="neV-FQ-Pny"/>
                             <constraint firstItem="HXq-6e-cLP" firstAttribute="trailing" secondItem="yuT-cZ-4zD" secondAttribute="trailing" id="p4h-If-PjZ"/>
                             <constraint firstItem="yuT-cZ-4zD" firstAttribute="leading" secondItem="HXq-6e-cLP" secondAttribute="leading" id="pTT-af-pC0"/>
                             <constraint firstItem="KQa-ly-63K" firstAttribute="leading" secondItem="HXq-6e-cLP" secondAttribute="leading" id="qy0-JE-h3t"/>
                             <constraint firstItem="vbS-46-QMO" firstAttribute="trailing" secondItem="HXq-6e-cLP" secondAttribute="trailing" id="uik-BI-kwb"/>
+                            <constraint firstItem="QnW-nK-lrl" firstAttribute="leading" secondItem="Yez-tr-SSP" secondAttribute="trailing" constant="21" id="zmm-cl-IUx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HXq-6e-cLP"/>
                     </view>
@@ -136,7 +202,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backgroundImage" destination="KQa-ly-63K" id="8BB-NQ-49z"/>
                         <outlet property="historyOfSoundLbl" destination="yuT-cZ-4zD" id="KRo-cu-71Q"/>
+                        <outlet property="slider" destination="Gwo-iT-XaB" id="sb5-qc-Gd6"/>
                         <segue destination="MO7-gL-4qZ" kind="show" identifier="about" id="eJG-3i-X80"/>
                     </connections>
                 </viewController>
@@ -181,12 +249,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPS-DM-oEv" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
-                                                <rect key="frame" x="98" y="10" width="60" height="60"/>
+                                                <rect key="frame" x="88" y="10" width="60" height="60"/>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.11304045376712329" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="2b1-TE-2uU"/>
-                                                    <constraint firstAttribute="width" constant="60" id="i7H-Vh-9Ab"/>
-                                                </constraints>
                                                 <state key="normal" backgroundImage="river"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -198,7 +262,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdo-t3-Qb0" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
-                                                <rect key="frame" x="217" y="10" width="60" height="60"/>
+                                                <rect key="frame" x="228" y="10" width="60" height="60"/>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.11304045376712329" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="1Y4-df-LMA"/>
@@ -215,7 +279,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6w-5R-sd3" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="10" width="60" height="60"/>
+                                                <rect key="frame" x="18" y="10" width="60" height="60"/>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.11304045376712329" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="QEa-Jj-6Ee"/>
@@ -232,7 +296,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rG-71-69n" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
-                                                <rect key="frame" x="307" y="10" width="60" height="60"/>
+                                                <rect key="frame" x="298" y="10" width="60" height="60"/>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.11304045376712329" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="0qQ-Xl-hRr"/>
@@ -249,13 +313,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Others sounds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tal-vb-f7P">
-                                                <rect key="frame" x="114" y="104" width="148" height="49"/>
+                                                <rect key="frame" x="114" y="99" width="148" height="49"/>
                                                 <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="41"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUA-Ul-hnx" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
-                                                <rect key="frame" x="158" y="161" width="60" height="60"/>
+                                                <rect key="frame" x="158" y="159" width="60" height="60"/>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.11304045376712329" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="1Kd-My-XbM"/>
@@ -271,21 +335,46 @@
                                                     <action selector="trainSoundBut:" destination="lKo-vD-egT" eventType="touchUpInside" id="hbZ-11-D4j"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOw-0B-n9R" customClass="RoundButton" customModule="Sweet_Dreams" customModuleProvider="target">
+                                                <rect key="frame" x="158" y="10" width="60" height="60"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.1130404538" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Hgf-aU-u8x"/>
+                                                    <constraint firstAttribute="width" constant="60" id="t6y-8R-5PV"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="storm"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="stormSoundBut:" destination="lKo-vD-egT" eventType="touchUpInside" id="2rD-2u-syV"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="GPS-DM-oEv" firstAttribute="firstBaseline" secondItem="6rG-71-69n" secondAttribute="firstBaseline" id="0XB-Hy-4kD"/>
                                             <constraint firstAttribute="height" constant="500" id="1Sf-EE-WtS"/>
-                                            <constraint firstItem="GPS-DM-oEv" firstAttribute="leading" secondItem="h6w-5R-sd3" secondAttribute="trailing" constant="30" id="91n-dy-q4w"/>
-                                            <constraint firstItem="GPS-DM-oEv" firstAttribute="top" secondItem="AlX-dp-1kP" secondAttribute="top" constant="10" id="Dhj-P7-Fv1"/>
-                                            <constraint firstItem="6rG-71-69n" firstAttribute="leading" secondItem="fdo-t3-Qb0" secondAttribute="trailing" constant="30" id="LhD-L2-Equ"/>
-                                            <constraint firstAttribute="trailing" secondItem="6rG-71-69n" secondAttribute="trailing" constant="8" id="PBS-9T-F9a"/>
+                                            <constraint firstItem="GPS-DM-oEv" firstAttribute="firstBaseline" secondItem="fdo-t3-Qb0" secondAttribute="firstBaseline" id="22R-dl-hvs"/>
+                                            <constraint firstItem="GPS-DM-oEv" firstAttribute="bottom" secondItem="h6w-5R-sd3" secondAttribute="bottom" id="Dbr-Qp-5DV"/>
+                                            <constraint firstItem="HOw-0B-n9R" firstAttribute="centerX" secondItem="AlX-dp-1kP" secondAttribute="centerX" id="GOK-ap-lD7"/>
+                                            <constraint firstItem="Tal-vb-f7P" firstAttribute="top" secondItem="GPS-DM-oEv" secondAttribute="bottom" constant="29" id="Gnf-45-eAL"/>
+                                            <constraint firstItem="GPS-DM-oEv" firstAttribute="baseline" secondItem="fdo-t3-Qb0" secondAttribute="baseline" id="LSS-kh-WR2"/>
+                                            <constraint firstItem="6rG-71-69n" firstAttribute="leading" secondItem="fdo-t3-Qb0" secondAttribute="trailing" constant="10" id="LhD-L2-Equ"/>
+                                            <constraint firstItem="HOw-0B-n9R" firstAttribute="top" secondItem="AlX-dp-1kP" secondAttribute="top" constant="10" id="Omy-cO-ccg"/>
+                                            <constraint firstAttribute="trailing" secondItem="6rG-71-69n" secondAttribute="trailing" constant="17" id="PBS-9T-F9a"/>
+                                            <constraint firstItem="GPS-DM-oEv" firstAttribute="baseline" secondItem="6rG-71-69n" secondAttribute="baseline" id="QgQ-ik-N03"/>
+                                            <constraint firstItem="GPS-DM-oEv" firstAttribute="top" secondItem="h6w-5R-sd3" secondAttribute="top" id="UiZ-iz-reG"/>
                                             <constraint firstItem="UUA-Ul-hnx" firstAttribute="centerX" secondItem="AlX-dp-1kP" secondAttribute="centerX" id="X4n-WN-PSU"/>
                                             <constraint firstItem="6rG-71-69n" firstAttribute="top" secondItem="AlX-dp-1kP" secondAttribute="top" constant="10" id="avg-mI-yEy"/>
                                             <constraint firstItem="Tal-vb-f7P" firstAttribute="centerX" secondItem="AlX-dp-1kP" secondAttribute="centerX" id="etL-fW-wmP"/>
-                                            <constraint firstItem="Tal-vb-f7P" firstAttribute="top" secondItem="GPS-DM-oEv" secondAttribute="bottom" constant="34" id="jCp-S6-A1b"/>
                                             <constraint firstItem="fdo-t3-Qb0" firstAttribute="top" secondItem="AlX-dp-1kP" secondAttribute="top" constant="10" id="jGl-wh-10h"/>
+                                            <constraint firstItem="fdo-t3-Qb0" firstAttribute="leading" secondItem="GPS-DM-oEv" secondAttribute="trailing" constant="80" id="jUt-hw-Yw8"/>
                                             <constraint firstItem="h6w-5R-sd3" firstAttribute="top" secondItem="AlX-dp-1kP" secondAttribute="top" constant="10" id="knF-kr-HWF"/>
-                                            <constraint firstItem="h6w-5R-sd3" firstAttribute="leading" secondItem="AlX-dp-1kP" secondAttribute="leading" constant="8" id="l4L-ou-kXz"/>
-                                            <constraint firstItem="UUA-Ul-hnx" firstAttribute="top" secondItem="Tal-vb-f7P" secondAttribute="bottom" constant="8" id="ozZ-S2-VyU"/>
+                                            <constraint firstItem="h6w-5R-sd3" firstAttribute="leading" secondItem="AlX-dp-1kP" secondAttribute="leading" constant="18" id="l4L-ou-kXz"/>
+                                            <constraint firstItem="UUA-Ul-hnx" firstAttribute="top" secondItem="Tal-vb-f7P" secondAttribute="bottom" constant="11" id="ozZ-S2-VyU"/>
+                                            <constraint firstItem="GPS-DM-oEv" firstAttribute="leading" secondItem="h6w-5R-sd3" secondAttribute="trailing" constant="10" id="veE-8l-VDW"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -316,8 +405,12 @@
     <resources>
         <image name="backgroundMenu" width="219" height="389"/>
         <image name="forest" width="96" height="96"/>
+        <image name="pause" width="104" height="104"/>
+        <image name="play" width="104" height="104"/>
+        <image name="repeat" width="96" height="96"/>
         <image name="river" width="96" height="96"/>
         <image name="sea" width="96" height="96"/>
+        <image name="storm" width="96" height="96"/>
         <image name="train" width="96" height="96"/>
         <image name="winter" width="96" height="96"/>
     </resources>

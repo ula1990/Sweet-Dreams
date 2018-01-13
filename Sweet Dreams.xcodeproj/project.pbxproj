@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7550113C200AA18100019F6D /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7550113B200AA18100019F6D /* test.mp3 */; };
 		757E0E2E200A118E00E1D1C5 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757E0E2D200A118E00E1D1C5 /* RoundButton.swift */; };
 		75B3A0B12008F1B700D06752 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B3A0B02008F1B700D06752 /* AppDelegate.swift */; };
 		75B3A0B62008F1B700D06752 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75B3A0B42008F1B700D06752 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7550113B200AA18100019F6D /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
 		757E0E2D200A118E00E1D1C5 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		75B3A0AD2008F1B700D06752 /* Sweet Dreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sweet Dreams.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B3A0B02008F1B700D06752 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7550113D200AA19400019F6D /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				7550113B200AA18100019F6D /* test.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		7550113E200AA1A600019F6D /* Additional classes */ = {
+			isa = PBXGroup;
+			children = (
+				757E0E2D200A118E00E1D1C5 /* RoundButton.swift */,
+			);
+			path = "Additional classes";
+			sourceTree = "<group>";
+		};
 		75B3A0A42008F1B700D06752 = {
 			isa = PBXGroup;
 			children = (
@@ -68,7 +86,8 @@
 				75B3A0C22008F21000D06752 /* StartVC.swift */,
 				75B3A0C42008F22300D06752 /* MainVC.swift */,
 				75B3A0C62008F24400D06752 /* AboutVC.swift */,
-				757E0E2D200A118E00E1D1C5 /* RoundButton.swift */,
+				7550113E200AA1A600019F6D /* Additional classes */,
+				7550113D200AA19400019F6D /* Sounds */,
 				75B3A0B72008F1B700D06752 /* Assets.xcassets */,
 				75B3A0B92008F1B700D06752 /* LaunchScreen.storyboard */,
 				75B3A0BC2008F1B700D06752 /* Info.plist */,
@@ -109,6 +128,11 @@
 					75B3A0AC2008F1B700D06752 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7550113C200AA18100019F6D /* test.mp3 in Resources */,
 				75B3A0BB2008F1B700D06752 /* LaunchScreen.storyboard in Resources */,
 				75B3A0B82008F1B700D06752 /* Assets.xcassets in Resources */,
 				75B3A0B62008F1B700D06752 /* Main.storyboard in Resources */,
