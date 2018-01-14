@@ -19,7 +19,12 @@ class StartVC: UIViewController {
         
     }
 
-
+    @IBAction func tutorialBut(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "tutorial", sender: navigationController)
+        
+    }
+    
     
 
     override func viewDidLoad() {

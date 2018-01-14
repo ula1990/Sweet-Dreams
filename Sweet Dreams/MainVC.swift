@@ -26,7 +26,7 @@ class MainVC: UIViewController {
     var updater: CADisplayLink! = nil
     
    
-    var trackListArray = ["start", "winter","river","forest","sea","train","rain"]
+    var trackListArray = ["start", "winter","river","forest","sea","train","rain","fireplace","city","cleaner","dryer"]
     
    
     
@@ -56,6 +56,7 @@ class MainVC: UIViewController {
             audioPlayer.currentTime = 0
             audioPlayer.play()
         }else{
+            audioPlayer.currentTime = 0
             audioPlayer.play()
         }
         
@@ -85,19 +86,19 @@ class MainVC: UIViewController {
     
     func selectSound(){
         UIView.animate(withDuration: 0.3, animations: {
-            self.playButton.alpha = 0.75
+            self.playButton.alpha = 0.90
         }, completion: {(true) in
             UIView.animate(withDuration: 0.3, animations: {
-                self.pauseButton.alpha = 0.75
+                self.pauseButton.alpha = 0.90
             }, completion: {(true) in
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.repeatButton.alpha = 0.75
+                    self.repeatButton.alpha = 0.90
                 }, completion: {(true) in
                     UIView.animate(withDuration: 0.3, animations: {
-                        self.slider.alpha = 0.75
+                        self.slider.alpha = 0.90
                     }, completion: {(true) in
                         UIView.animate(withDuration: 0.3, animations: {
-                            self.currenTimeOfAudio.alpha = 0.75
+                            self.currenTimeOfAudio.alpha = 0.90
                         }, completion: {(true) in})
                     })
                 }
@@ -121,6 +122,18 @@ class MainVC: UIViewController {
         }else if recivedTrackNumber == 6 {
             playTrack(trackName: trackListArray[6])
 
+        }else if recivedTrackNumber == 7 {
+            playTrack(trackName: trackListArray[7])
+            
+        }else if recivedTrackNumber == 8 {
+            playTrack(trackName: trackListArray[8])
+            
+        }else if recivedTrackNumber == 9 {
+            playTrack(trackName: trackListArray[9])
+            
+        }else if recivedTrackNumber == 10 {
+            playTrack(trackName: trackListArray[10])
+            
         }else{
             playTrack(trackName: trackListArray[0])
         }
@@ -222,14 +235,19 @@ class MainVC: UIViewController {
 
 extension MainVC: SelectedTrackDelegate {
     func didSelectTrackNumber(_ trackNumber: Int , historyOfSound: String, image: UIImage ) {
-        historyOfSoundLbl.text = historyOfSound
         recivedTrackNumber = trackNumber
         self.backgroundImage.alpha = 0
+        self.historyOfSoundLbl.alpha = 0
         func updateImgage(){
             UIView.animate(withDuration: 0.9, animations: {
                 self.backgroundImage.image = image
                 self.backgroundImage.alpha = 1
-            }, completion: {(true) in })
+            }, completion: {(true) in
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.historyOfSoundLbl.text = historyOfSound
+                    self.historyOfSoundLbl.alpha = 1
+                }, completion: {(true) in })
+            })
         }
         
         updateImgage()
