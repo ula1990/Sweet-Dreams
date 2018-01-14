@@ -10,20 +10,22 @@ import UIKit
 
 class StartVC: UIViewController {
     
+ 
     @IBOutlet weak var startButton: UIButton!
     
     @IBAction func startButtonPressed(_ sender: Any) {
         
-        self.performSegue(withIdentifier: "start", sender: navigationController)
+        self.performSegue(withIdentifier: "start", sender: navigationItem)
         
     }
-    
+
+
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.startButton.alpha = 0
+   self.startButton.alpha = 0
         
         //CONFIGURE NAVIGATION CONTROLLER
         
@@ -37,11 +39,13 @@ class StartVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIView.animate(withDuration: 1, animations: {
+      UIView.animate(withDuration: 1, animations: {
             self.startButton.alpha = 1
         }, completion: {(true) in})
         
     }
+ 
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

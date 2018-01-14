@@ -12,34 +12,52 @@ import AVFoundation
 class MainVC: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
-    var recivedTrackNumber: Int!
+    var recivedTrackNumber: Int! = 0
     @IBOutlet weak var historyOfSoundLbl: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var currenTimeOfAudio: UILabel!
+    @IBOutlet weak var playButton: RoundButton!
+    @IBOutlet weak var pauseButton: RoundButton!
+    @IBOutlet weak var repeatButton: RoundButton!
+    
+    
+    
     var updater: CADisplayLink! = nil
     
    
-    var trackListArray = ["test"]
+    var trackListArray = ["start", "winter","river","forest","sea","train","rain"]
     
    
     
     @IBAction func playButton(_ sender: Any) {
-        if audioPlayer.play(){
-            audioPlayer.stop()
+        if audioPlayer.isPlaying == false {
+            
+            audioPlayer.play()
+        }else if audioPlayer.isPlaying == true {
+            audioPlayer.pause()
         }else{
-            selectSound()
+            print(Error.self)
+            
         }
-        
-        
+     
     }
     
     @IBAction func pauseButton(_ sender: Any) {
-        audioPlayer.pause()
+        if audioPlayer.isPlaying{
+            audioPlayer.pause()
+        }else{
+            audioPlayer.play()
+        }
     }
     
     @IBAction func replayButton(_ sender: Any) {
-        audioPlayer.play(atTime: 0)
+        if audioPlayer.isPlaying{
+            audioPlayer.currentTime = 0
+            audioPlayer.play()
+        }else{
+            audioPlayer.play()
+        }
         
     }
     
@@ -52,29 +70,59 @@ class MainVC: UIViewController {
 
     }
     
+    
+    @IBAction func shareButton(_ sender: Any) {
+        
+        let activityVC = UIActivityViewController(activityItems: ["Take a look on this amazing App. called Sweet Dreams"], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = self.view
+        self.present(activityVC, animated: true, completion: nil)
+        
+    }
+    
+    
+    
     //FUNCTION TO SELECT A TRACK
     
     func selectSound(){
-        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.playButton.alpha = 0.75
+        }, completion: {(true) in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.pauseButton.alpha = 0.75
+            }, completion: {(true) in
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.repeatButton.alpha = 0.75
+                }, completion: {(true) in
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.slider.alpha = 0.75
+                    }, completion: {(true) in
+                        UIView.animate(withDuration: 0.3, animations: {
+                            self.currenTimeOfAudio.alpha = 0.75
+                        }, completion: {(true) in})
+                    })
+                }
+                )
+            })
+        })
         if recivedTrackNumber == 1{
-            playTrack(trackName: trackListArray[0])
+            playTrack(trackName: trackListArray[1])
         }else if recivedTrackNumber == 2 {
-            playTrack(trackName: trackListArray[0])
+            playTrack(trackName: trackListArray[2])
 
         }else if recivedTrackNumber == 3 {
-            playTrack(trackName: trackListArray[0])
+            playTrack(trackName: trackListArray[3])
 
         }else if recivedTrackNumber == 4 {
-            playTrack(trackName: trackListArray[0])
+            playTrack(trackName: trackListArray[4])
 
         }else if recivedTrackNumber == 5 {
-            playTrack(trackName: trackListArray[0])
+            playTrack(trackName: trackListArray[5])
 
         }else if recivedTrackNumber == 6 {
-            playTrack(trackName: trackListArray[0])
+            playTrack(trackName: trackListArray[6])
 
         }else{
-            audioPlayer.stop()
+            playTrack(trackName: trackListArray[0])
         }
     }
     
@@ -130,12 +178,25 @@ class MainVC: UIViewController {
     @objc func updateSlider(){
         slider.value = Float(audioPlayer.currentTime)
         
-        currenTimeOfAudio.text = String(Int(audioPlayer.currentTime))
+        let time = Int(audioPlayer.currentTime)
+        let trackSeconds = Int(time) % 60
+        let trackMin = Int(time / 60)
+        currenTimeOfAudio.text = String(trackMin) + ":" + String(trackSeconds)
+     //   currenTimeOfAudio.text = String(Int(audioPlayer.currentTime))
     }
+    
+    
+    
     
 
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        
+        self.slider.alpha = 0
+        self.playButton.alpha = 0
+        self.pauseButton.alpha = 0
+        self.repeatButton.alpha = 0
+        self.currenTimeOfAudio.alpha = 0
         
         
 
@@ -163,7 +224,15 @@ extension MainVC: SelectedTrackDelegate {
     func didSelectTrackNumber(_ trackNumber: Int , historyOfSound: String, image: UIImage ) {
         historyOfSoundLbl.text = historyOfSound
         recivedTrackNumber = trackNumber
-        backgroundImage.image = image
+        self.backgroundImage.alpha = 0
+        func updateImgage(){
+            UIView.animate(withDuration: 0.9, animations: {
+                self.backgroundImage.image = image
+                self.backgroundImage.alpha = 1
+            }, completion: {(true) in })
+        }
+        
+        updateImgage()
         selectSound()
         
     }
