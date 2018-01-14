@@ -15,7 +15,7 @@ protocol SelectedTrackDelegate {
 class SelectSoundVC: UIViewController {
     
     
-    var historyArray = ["Relaxing sounds of the real Snowstorm","River sound","Forest sound","Sounds of nature, relaxing ocean, waves sounds and birds singing at paradisiac tropical beach","You are in the train from Switzerland which following to Alps","Rain sound","Real fireplace with wood burning, producing soothing crackling sounds that help you relax","Amazing sound of New York City in the Night","Sound to relax Baby To Go To Sleep Soothing Vacuum Cleaner","Hair Dryer White Noise"]
+    var historyArray = ["Relaxing sounds of the real Snowstorm","Relaxing sound of the mountain river","Relaxing sounds of Night Forest","Sounds of nature, relaxing ocean, waves sounds and birds singing at paradisiac tropical beach","You are in the train from Switzerland which following to Alps","Rain sound","Real fireplace with wood burning, producing soothing crackling sounds that help you relax","Amazing sound of New York City in the Morning","Sound to relax Baby To Go To Sleep Soothing Vacuum Cleaner","Hair Dryer White Noise"]
     
  
     var trackNumber: Int!
