@@ -35,19 +35,19 @@ class TutorialVC: UIViewController {
         super.viewDidAppear(animated)
         
         UIView.animate(withDuration: 0.5, animations: {
-            self.firstTextlbl.alpha = 0.70
+            self.firstTextlbl.alpha = 1
         }, completion: {(true) in
             UIView.animate(withDuration: 0.5, animations: {
                 self.fristImage.alpha = 1
             }, completion: {(true) in
                 UIView.animate(withDuration: 0.5, animations: {
-                    self.secondTextLbl.alpha = 0.75
+                    self.secondTextLbl.alpha = 1
                 }, completion: {(true) in
                     UIView.animate(withDuration: 0.5, animations: {
                         self.secondImega.alpha = 1
                     }, completion: {(true ) in
                         UIView.animate(withDuration: 0.5, animations: {
-                            self.thirdTextLbl.alpha = 0.75
+                            self.thirdTextLbl.alpha = 1
                         }, completion: {(true) in })
                     })
                 })
