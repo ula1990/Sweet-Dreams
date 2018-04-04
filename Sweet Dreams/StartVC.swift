@@ -16,29 +16,21 @@ class StartVC: UIViewController {
     @IBAction func startButtonPressed(_ sender: Any) {
         
         self.performSegue(withIdentifier: "start", sender: navigationItem)
-        
     }
 
     @IBAction func tutorialBut(_ sender: UIButton) {
         
         self.performSegue(withIdentifier: "tutorial", sender: navigationController)
-        
     }
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-   self.startButton.alpha = 0
-        
-        //CONFIGURE NAVIGATION CONTROLLER
-        
+        self.startButton.alpha = 0
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,10 +39,7 @@ class StartVC: UIViewController {
       UIView.animate(withDuration: 1, animations: {
             self.startButton.alpha = 1
         }, completion: {(true) in})
-        
     }
- 
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

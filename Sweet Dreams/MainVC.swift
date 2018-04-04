@@ -20,16 +20,11 @@ class MainVC: UIViewController {
     @IBOutlet weak var playButton: RoundButton!
     @IBOutlet weak var pauseButton: RoundButton!
     @IBOutlet weak var repeatButton: RoundButton!
-    
-    
-    
+
     var updater: CADisplayLink! = nil
-    
-   
+
     var trackListArray = ["start", "winter","river","forest","sea","train","rain","fireplace","city","cleaner","dryer"]
-    
-   
-    
+
     @IBAction func playButton(_ sender: Any) {
         if audioPlayer.isPlaying == false {
             
@@ -38,9 +33,7 @@ class MainVC: UIViewController {
             audioPlayer.pause()
         }else{
             print(Error.self)
-            
         }
-     
     }
     
     @IBAction func pauseButton(_ sender: Any) {
@@ -59,7 +52,6 @@ class MainVC: UIViewController {
             audioPlayer.currentTime = 0
             audioPlayer.play()
         }
-        
     }
     
     
@@ -67,21 +59,18 @@ class MainVC: UIViewController {
     
     @IBAction func aboutButton(_ sender: Any) {
         self.performSegue(withIdentifier: "about", sender: navigationController)
-        
 
     }
     
     
     @IBAction func shareButton(_ sender: Any) {
-        
+
         let activityVC = UIActivityViewController(activityItems: ["Take a look on this amazing App. called Sweet Dreams"], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view
         self.present(activityVC, animated: true, completion: nil)
         
     }
-    
-    
-    
+
     //FUNCTION TO SELECT A TRACK
     
     func selectSound(){
@@ -146,10 +135,7 @@ class MainVC: UIViewController {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: trackName, ofType: "mp3")!))
             audioPlayer.prepareToPlay()
-            
-           
-            
-            
+
             let session = AVAudioSession.sharedInstance()
             slider.minimumValue = 0.0
             slider.maximumValue = Float(audioPlayer.duration)
@@ -182,25 +168,15 @@ class MainVC: UIViewController {
         
         
     }
-    
 
-   
-
-
-    
     @objc func updateSlider(){
         slider.value = Float(audioPlayer.currentTime)
-        
         let time = Int(audioPlayer.currentTime)
         let trackSeconds = Int(time) % 60
         let trackMin = Int(time / 60)
         currenTimeOfAudio.text = String(trackMin) + ":" + String(trackSeconds)
      //   currenTimeOfAudio.text = String(Int(audioPlayer.currentTime))
     }
-    
-    
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -210,8 +186,6 @@ class MainVC: UIViewController {
         self.pauseButton.alpha = 0
         self.repeatButton.alpha = 0
         self.currenTimeOfAudio.alpha = 0
-        
-        
 
     }
     

@@ -14,20 +14,16 @@ protocol SelectedTrackDelegate {
 
 class SelectSoundVC: UIViewController {
     
-    
     var historyArray = ["Relaxing sounds of the real Snowstorm","Relaxing sounds of the mountain river","Relaxing sounds of Night Forest","Sounds of nature, relaxing ocean, waves sounds and birds singing at paradisiac tropical beach","You are in the train from Switzerland which following to Alps","Rain sound","Real fireplace with wood burning, producing soothing crackling sounds that help you relax","Amazing sound of New York City in the Morning","Sound to relax Baby To Go To Sleep Soothing Vacuum Cleaner","Hair Dryer White Noise for your Baby"]
     
  
     var trackNumber: Int!
-    
-     var selectionDelegate: SelectedTrackDelegate?
+    var selectionDelegate: SelectedTrackDelegate?
   
-
     @IBAction func winterSoundBut(_ sender: UIButton) {
         trackNumber = 1
         
         selectionDelegate?.didSelectTrackNumber(trackNumber, historyOfSound: historyArray[0] , image: UIImage(named: "background1")!)
-
     }
     
     @IBAction func riverSoundBut(_ sender: UIButton) {
@@ -58,7 +54,6 @@ class SelectSoundVC: UIViewController {
         
     }
     
-    
     @IBAction func fireplaceSoundBut(_ sender: UIButton) {
         trackNumber = 7
         selectionDelegate?.didSelectTrackNumber(trackNumber, historyOfSound: historyArray[6] , image: UIImage(named: "background13")!)
@@ -71,7 +66,6 @@ class SelectSoundVC: UIViewController {
         
     }
     
-    
     @IBAction func cleanerSoundBut(_ sender: UIButton) {
         trackNumber = 9
         selectionDelegate?.didSelectTrackNumber(trackNumber, historyOfSound: historyArray[8] , image: UIImage(named: "backgroundMenu")!)
@@ -81,32 +75,11 @@ class SelectSoundVC: UIViewController {
         trackNumber = 10
         selectionDelegate?.didSelectTrackNumber(trackNumber, historyOfSound: historyArray[9] , image: UIImage(named: "backgroundMenu")!)
     }
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
